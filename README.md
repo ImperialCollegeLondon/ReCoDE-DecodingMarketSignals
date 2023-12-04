@@ -1,6 +1,6 @@
 <!-- Your Project title, make it sound catchy! -->
 
-# Project title
+# Decoding Market Signals
 
 <!-- Provide a short description to your project -->
 
