@@ -1,5 +1,18 @@
+# my custom libraries
+numpy
+pandas
+matplotlib
+plotly
+scikit-learn
+ta-lib
+sphinx==4.0.3
+black
+
+# ReCoDE defaults
 mkdocs==1.5.3
 mkdocs-include-markdown-plugin==3.7.1
 mkdocs-jupyter==0.24.5
 mkdocs-material==9.4.6
 python-markdown-math==0.8
+
+
