@@ -1,4 +1,5 @@
 # my custom libraries
+ta-lib
 numpy
 pandas
 matplotlib
@@ -6,7 +7,6 @@ plotly
 scikit-learn
 sphinx==4.0.3
 black
-TA-Lib
 
 # ReCoDE defaults
 mkdocs==1.5.3
