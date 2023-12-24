@@ -1,6 +1,6 @@
 name: Publish MkDocs
 
-on:
+on: # would it make sense to trigger the CI pipeline also when creating a new branch?
   push:
     branches:
       - main
