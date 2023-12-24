@@ -24,6 +24,9 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y build-essential wget
 
+      - name: List files in the repository
+        run: ls -la
+
       - name: Install TA-Lib binaries
         run: |
           chmod +x install-talib.sh
