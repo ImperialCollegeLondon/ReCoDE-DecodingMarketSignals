@@ -1,5 +1,5 @@
 # my custom libraries
-#ta-lib ' tricky to install; works with Python 3.9 and conda install ta-lib, but not from pip using pip install TA-Lib
+#TA-Lib  # tricky to install; works with Python 3.9 and conda install ta-lib, but not straightforward from pip using pip install TA-Lib
 numpy
 pandas
 matplotlib
