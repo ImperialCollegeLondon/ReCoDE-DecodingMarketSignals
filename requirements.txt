@@ -1,5 +1,5 @@
 # my custom libraries
-ta-lib
+#ta-lib ' tricky to install; works with Python 3.9 and conda install ta-lib, but not from pip using pip install TA-Lib
 numpy
 pandas
 matplotlib
@@ -9,8 +9,8 @@ sphinx==4.0.3
 black
 
 # ReCoDE defaults
-#mkdocs==1.5.3
-#mkdocs-include-markdown-plugin==3.7.1
-#mkdocs-jupyter==0.24.5
-#mkdocs-material==9.4.6
-#python-markdown-math==0.8
+mkdocs==1.5.3
+mkdocs-include-markdown-plugin==3.7.1
+mkdocs-jupyter==0.24.5
+mkdocs-material==9.4.6
+python-markdown-math==0.8
