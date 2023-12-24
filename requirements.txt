@@ -4,9 +4,9 @@ pandas
 matplotlib
 plotly
 scikit-learn
-ta-lib
 sphinx==4.0.3
 black
+TA-Lib
 
 # ReCoDE defaults
 mkdocs==1.5.3
