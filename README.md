@@ -1,5 +1,9 @@
 <!-- Your Project title, make it sound catchy! -->
 
+# JAMES HEADER
+
+dfkugsfukdh
+
 # Decoding Market Signals
 
 <!-- Provide a short description to your project -->
