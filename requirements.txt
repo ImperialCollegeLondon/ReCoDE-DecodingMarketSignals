@@ -6,6 +6,7 @@ matplotlib
 plotly
 scikit-learn
 sphinx==4.0.3
+pylint
 black
 
 # ReCoDE defaults
