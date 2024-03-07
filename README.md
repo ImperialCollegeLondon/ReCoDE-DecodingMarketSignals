@@ -6,11 +6,24 @@
 
 ## Description
 
-This project aims to rigorously back-test a trading strategy, focusing on evaluating the informational value of technical trading signals, particularly candlestick patterns. Utilizing Python, an automated pipeline will systematically scan the market, collecting publicly available data for analysis. Advanced functionalities of the Pandas library will be employed for detailed statistical characterizations and efficient data storage.
+This project aims to rigorously back-test a trading strategy, focusing on evaluating the informational value of 
+candlestick patterns. Utilising `Python`, a pipeline of functions will systematically scan and evaluate 
+the components of the S&P 500 stock market index for patterns upon which one can base a trading decision.
 
-The project's core involves assessing the predictive capabilities of these trading signals using nuanced binary classification performance metrics, thereby determining their practical applicability. Additionally, a logistic regression model will be deployed to explore the intersection of finance and machine learning. This phase aims to ascertain whether machine learning algorithms can outperform traditional methods in predicting market movements based on identified signals.
+Advanced functionalities of the `Pandas` library will be employed to load, manipulate and store detailed statistical 
+data, particularly `method chains`, `multi-indexed data frames` and `user-defined functions` acting on rows and columns of data frames.
 
-This multifaceted project integrates financial analysis, data science, and machine learning, promising valuable insights with both academic and practical implications. Its methodologically sound approach, coupled with detailed documentation and learning annotations, is designed to make it an exemplary contribution to the ReCoDE initiative, showcasing the transformative potential of research computing and data science in diverse disciplines.
+The project's core involves assessing the predictive capabilities of these trading signals using nuanced binary classification performance 
+metrics, thereby determining their practical applicability. Additionally, a logistic regression model will be deployed 
+to explore the intersection of finance and machine learning. 
+This phase aims to ascertain whether machine learning algorithms can outperform traditional methods in predicting market 
+movements based on identified signals.
+
+This multifaceted project integrates financial analysis, data science, and machine learning, 
+promising insights with both academic and practical implications. 
+Its methodologically sound approach, coupled with detailed documentation and learning annotations, 
+is designed to make it an exemplary contribution to the ReCoDE initiative, 
+showcasing the transformative potential of research computing and data science in interdisciplinary research.
 
 <!-- What should the students going through your exemplar learn -->
 
@@ -18,11 +31,9 @@ This multifaceted project integrates financial analysis, data science, and machi
 
 - Setting up a custom computational environment for financial data science.
 - Making a custom technical analysis library written in C++ work with recent Python. 
-- Obtaining and pre-processing high-quality.
+- Obtaining and pre-processing high-quality financial data.
 - Using Pandas' best-practices like method-chaining, and multi-index data frames for data manipulation  
 - Independently testing and analysing trading actions proposed on a hypothesis.
-- Learning an approach "from paper to code": We will translate parts of a densely-written paper that claims to contain "alpha signals" to Python code and analyse whether they work in practice.
-
 
 <!-- How long should they spend reading and practising using your Code.
 Provide your best estimate -->
@@ -43,12 +54,12 @@ List any resources you would recommend to get the students started.
 If there is an existing exemplar in the ReCoDE repositories link to that.
 -->
 
-- Foundational knowledge of Python
-- An interest in stock markets and trading signals
-- An interest in statistical analysis and hypothesis testing
+- Foundational knowledge of Python and Pandas.
+- An interest in stock markets and trading signals.
+- An interest in statistical analysis and hypothesis testing.
 - Resilience in troubleshooting and adapting older libraries to work with recent Python versions.
   - Particularly, we will make use of a library called `ta-lib` that contains a pattern-recognition library detecting candlestick patterns in Open-High-Low-Close `(OHCL)` data.
-- Familiarity with Jupyter notebooks.
+- Familiarity with Jupyter notebooks, type annotations, and automation.
 
 ### Academic
 
@@ -67,7 +78,12 @@ Here are some examples:
 - Paraview
 -->
 
-The repository is self-contained. Additional references are provided in the Jupyter notebooks. 
+The repository is self-contained. Additional references are provided in the Jupyter notebooks.
+When we move form a single-stock analysis to the whole investment-universe, the resulting data frames 
+become too large to work with on a standard machine leading to Kernel crashes. They are themselves not dangerous
+to the hardware of the computer at all, and one can mitigate this by selecting a subset of the data. If you wish to run the 
+code on all the data, you need a potent machine, or alternatively execute the code on the HPC facilities. 
+That does not hinder you from getting started, though.
 
 
 ### System
@@ -90,34 +106,36 @@ A final exercise can be found in the `final` folder.
 Solutions to the above can be found in `solutions`.
 -->
 
-A recent mid-class laptop is sufficient. The code was developed on a Linux machine. 
+A recent mid-class laptop is sufficient to follow along the code. The more data you wish to analyse, the more RAM
+it should have. The code was developed on a Linux machine. 
 
 In this code exemplary, we make use of `Python 3.11`. 
-As already hinted, we identify the candlestick patterns in financial markets data using a library that is called `ta-lib`.
+Identifying the candlestick patterns in financial markets data is obtained by using a library that is called `ta-lib`.
 It works well for our task, but is no longer maintained. If you are comfortable with an older version of Python, precisely 
 `Python 3.8` or `Python 3.9`, or just want to get started, it is straightforward to install the library using `pip` or `conda`. 
 
 `ta-lib` was tested to be installable from `pypi` on `Python 3.8` and `3.9`.
 If you just want to get started, use `Python 3.8`. `ta-lib` can then be installed using `pip install TA-Lib`. 
 Alternatively, if you want to make use of the `conda` package manager, use `conda install ta-lib`
-For `Python 3.9`, the author observed on a Linux operating system, that `conda install ta-lib` worked straightforward, whereas `pip install TA-Lib` did not.
+For `Python 3.9`, the author observed on a Linux operating system, that `conda install ta-lib` worked straightforward, 
+whereas `pip install TA-Lib` did not (the different capitalisation is due to packaging the library on different channels).
 
 If you want to make use of later versions of Python such as the environment this project was developed on, precisely 
 `Python v. 3.11`, the process is more involved and requires compiling `ta-lib's C++` files from source.
 
-Ww know met two common problem of computer scientists, data scientists and practitioners:
+We now encountered two common problems, we frequently face as computer and data scientists:
 i) Making `legacy` code run on modern systems,
-ii) Facing multiple choices of what package manager to use.
+ii) Facing multiple choices of which package manager to use.
 If you are just interested on getting started, use `Python 3.8` and skip the following section.
 
 For the interested reader, is follows some background information on i) and ii).
-Issue i) is commonly encountered in practice, especially in larger corporations or custom software whose author's stopped 
-maintaining their code. There is no silver bullet on working with legacy code and custom problem often need tailor-made solutions.
+Issue i) is commonly encountered in practice, especially in larger corporations operating with custom software, whose author's stopped 
+maintaining their code. There is no silver bullet on working with legacy code and custom problems often need tailor-made solutions.
 For this project, the author wrote
 a `shell` script that is custom-made to set up `ta-lib` for `Python 3.11`. Whenever you are not sure whether a solution works and you
 have reasons to believe your attempt is error-prone, might have side-effects, or spoil the operating system, it is advisable 
 to work from within a virtual environment, for example using `Docker`, before employing a working solution on the user's machine. 
-Discussing `Docker` is beyond the scope of this documentation.
+Discussing `Docker` is beyond the scope of this documentation, however.
 
 The `shell script` can also be directly applied to work on MacOS as the latter uses the `Z shell` by default. 
 The `Z shell`, is also known as `zsh` and is a `Unix shell` that is built on top of `bash`. Hence, compatibility 
@@ -129,7 +147,7 @@ to make them compatible on Windows.
 Let us now quickly address issue ii):
 If your Python environment is set up using miniconda (recommended), see also `https://docs.conda.io/projects/miniconda/en/latest/`,
 both, `conda` and `pip` are installed by default, and you can make use of both them.   
-If you Python environment is set up using the source files from `https://www.python.org/` you might have to install `pip` separately
+If your Python environment is set up using the source files from `https://www.python.org/` you might have to install `pip` separately
 and cannot use the benefits of conda.
 
 What then is the difference between `pip` and `conda`?
@@ -141,15 +159,15 @@ While it can manage Python packages, it is not limited to Python and can handle 
 Conda is often used to create isolated environments that can include different versions of Python and non-Python dependencies.
 It can manage both Python packages and system-level packages and is capable of handling complex dependency resolution.
 
-Managing and detecting version conflicts of a large Python setup again, is a topic on its own. Granted `conda` is diligent, but slow, the 
-reader is encouraged to look into promising alternatives like `mama`, which is a package manager written in `C++` and hence more performant 
-than conda, although less tested.
+Managing and detecting version conflicts of a large Python setup is again a topic on its own. Granted `conda` is diligent, but slow, the 
+reader is encouraged to look into promising alternatives like `mamba`, which is a package manager written in `C++` and hence more performant 
+than `conda`, although less tested.
 
 A final note regarding code-formatting. To comply with the PEP-8 style guide for Python code,  
 `https://peps.python.org/pep-0008/`, we make use of a code-formatter, that automatically spots issues concerning spacing
 and style. It is applied on code that runs error-free and ensures style consistency. There are several open-source code-formatters
 out there and arguably the most popular are `black`, see `https://github.com/psf/black`, and `Ruff`, see `https://docs.astral.sh/ruff/formatter/`.
-The former is well-tested, however the latter is more performant and has recently gained increasing attention.
+The former is well-tested, however the latter is more performant and has recently gained increasing attention. Hence, we make use of Ruff.
 
 
 ## Getting Started
@@ -174,38 +192,52 @@ on their own data from different markets, for instance, the futures and forex ma
 The below is a TODO
 -->
 
-[comment]: <> (## Project Structure)
+## Project Structure
 
 
-[comment]: <> (```log)
+```log
 
-[comment]: <> (.)
+.
 
-[comment]: <> (├── examples)
+├── data
 
-[comment]: <> (│   ├── ex1)
+│   ├── SP500_daily_data_1980_to_2023.csv.gz (to be downloaded by the user via WRDS)
 
-[comment]: <> (│   └── ex2)
+│   └── SP500_tickers_one_per_line.txt
 
-[comment]: <> (├── src)
+├── figures
 
-[comment]: <> (|   ├── file1.py)
+|   ├── candlestick_anatomy.png
 
-[comment]: <> (|   ├── file2.cpp)
+|   ├── WRDS_overview.png
 
-[comment]: <> (|   ├── ...)
+|   ├── CRSP1_select_quarterly.png
 
-[comment]: <> (│   └── data)
+|   ├── ...
 
-[comment]: <> (├── app)
+│   └── WRDS_overview.png
 
-[comment]: <> (├── docs)
+├── notebooks
 
-[comment]: <> (├── main)
+|   ├── BSquant.py
 
-[comment]: <> (└── test)
+|   ├── 1_obtaining_financial_data.ipynb
 
-[comment]: <> (```)
+|   ├── 2_single_stock_case.ipynb
+
+|   ├── 3_SP500_case.ipynb
+
+├── install-talib.sh
+
+├── requirements.txt
+
+├── mkdocs.yml
+
+├── LICENSE.md
+
+└── README.md
+
+```
 
 <!-- Change this to your License. Make sure you have added the file on GitHub -->
 
