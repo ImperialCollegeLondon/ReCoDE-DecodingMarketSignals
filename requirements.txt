@@ -1,5 +1,4 @@
 # my custom libraries
-#TA-Lib  # tricky to install; works with Python 3.9 and conda install ta-lib, but not straightforward from pip using pip install TA-Lib
 numpy
 pandas
 matplotlib
@@ -7,7 +6,11 @@ plotly
 scikit-learn
 sphinx==4.0.3
 pylint
-black
+ruff
+nbstripout # after pip installing in teh respective virtual environment, invoke `nbstripout --install` in the terminal.
+nbconvert
+pre-commit  # after install is complete, and you activated the respective Python virtual environment, run `pre-commit install` in the terminal. Before each commit you then invoke `pre-commit run --all-files` in the terminal for the pre-commit scripts to run.
+
 
 # ReCoDE defaults
 mkdocs==1.5.3
