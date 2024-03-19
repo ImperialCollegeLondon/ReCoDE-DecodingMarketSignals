@@ -111,14 +111,14 @@ it should have. The code was developed on a Linux machine.
 
 In this code exemplary, we make use of `Python 3.11`. 
 Identifying the candlestick patterns in financial markets data is obtained by using a library that is called `ta-lib`.
-It works well for our task, but is no longer maintained. If you are comfortable with an older version of Python, precisely 
-`Python 3.8` or `Python 3.9`, or just want to get started, it is straightforward to install the library using `pip` or `conda`. 
+It works well for our task, but its Python wrapper is no longer maintained. If you are comfortable with an older version of Python, precisely 
+`Python 3.8` or `Python 3.9`, or just want to get started, it is straightforward to install an older version using `pip` or `conda`. 
 
 `ta-lib` was tested to be installable from `pypi` on `Python 3.8` and `3.9`.
 If you just want to get started, use `Python 3.8`. `ta-lib` can then be installed using `pip install TA-Lib`. 
 Alternatively, if you want to make use of the `conda` package manager, use `conda install ta-lib`
 For `Python 3.9`, the author observed on a Linux operating system, that `conda install ta-lib` worked straightforward, 
-whereas `pip install TA-Lib` did not (the different capitalisation is due to packaging the library on different channels).
+whereas `pip install ta-lib` did not.
 
 If you want to make use of later versions of Python such as the environment this project was developed on, precisely 
 `Python v. 3.11`, the process is more involved and requires compiling `ta-lib's C++` files from source.
