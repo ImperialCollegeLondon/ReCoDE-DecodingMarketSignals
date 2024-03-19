@@ -188,27 +188,27 @@ def cs_performance(cs_signals_df: pd.DataFrame) -> pd.DataFrame:
       assuming a confidence level of 95%.
     """
 
-    cs_signals_df = cs_signals_df.copy()
+    cs_signals_df_copy = cs_signals_df.copy()
 
     # Calculate TP and FP for each CS pattern
-    cs_signals_df["TP"] = (
+    cs_signals_df_copy["TP"] = (
         (
-            np.sign(cs_signals_df["cs_pattern"])
-            == np.sign(cs_signals_df["sign_next_day_return"])
+            np.sign(cs_signals_df_copy["cs_pattern"])
+            == np.sign(cs_signals_df_copy["sign_next_day_return"])
         )
-        & (cs_signals_df["cs_pattern"] != 0)
+        & (cs_signals_df_copy["cs_pattern"] != 0)
     ).astype(int)
 
-    cs_signals_df["FP"] = (
+    cs_signals_df_copy["FP"] = (
         (
-            np.sign(cs_signals_df["cs_pattern"])
-            != np.sign(cs_signals_df["sign_next_day_return"])
+            np.sign(cs_signals_df_copy["cs_pattern"])
+            != np.sign(cs_signals_df_copy["sign_next_day_return"])
         )
-        & (cs_signals_df["cs_pattern"] != 0)
+        & (cs_signals_df_copy["cs_pattern"] != 0)
     ).astype(int)
 
     # Group by the 'signal' level of the index (which represents the candlestick pattern) and sum TP and FP for each pattern
-    performance_metrics = cs_signals_df.groupby("candle").agg(
+    performance_metrics = cs_signals_df_copy.groupby("candle").agg(
         {
             "TP": "sum",
             "FP": "sum",
