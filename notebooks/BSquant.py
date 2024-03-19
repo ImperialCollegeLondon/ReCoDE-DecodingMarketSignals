@@ -57,9 +57,11 @@ def load_data(
     if ticker is not None:
         df = df.copy().query("ticker == @ticker").reset_index(drop=True)
 
-    # Apply date filtering only if both, start and end dates are provided
-    if selected_start_date is not None and selected_end_date is not None:
-        df = df[(df["date"] >= selected_start_date) & (df["date"] <= selected_end_date)]
+    # Apply date filtering
+    if selected_start_date is not None:
+        df = df[df["date"] >= selected_start_date]
+    if selected_end_date is not None:
+        df = df[df["date"] <= selected_end_date]
 
     return df.reset_index(drop=True)
 
