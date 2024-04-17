@@ -1,4 +1,5 @@
 # my custom libraries
+notebook
 numpy
 pandas
 matplotlib
@@ -7,7 +8,7 @@ scikit-learn
 sphinx==4.0.3
 pylint
 ruff
-nbstripout # after pip installing in teh respective virtual environment, invoke `nbstripout --install` in the terminal.
+nbstripout # after pip installing in the respective virtual environment, invoke `nbstripout --install` in the terminal.
 nbconvert
 pre-commit  # after install is complete, and you activated the respective Python virtual environment, run `pre-commit install` in the terminal. Before each commit you then invoke `pre-commit run --all-files` in the terminal for the pre-commit scripts to run.
 

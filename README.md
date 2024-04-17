@@ -98,7 +98,7 @@ Start by watching the introduction video,
 then study Jupyter notebooks 1-3 in the `intro` folder
 and attempt to complete exercise 1a and 1b.
 
-Once done, start going through through the PDF in the `main` folder.
+Once done, start going through the PDF in the `main` folder.
 By the end of it you should be able to solve exercises 2 to 4.
 
 A final exercise can be found in the `final` folder.
@@ -133,11 +133,11 @@ Issue i) is commonly encountered in practice, especially in larger corporations 
 maintaining their code. There is no silver bullet on working with legacy code and custom problems often need tailor-made solutions.
 For this project, the author wrote
 a `shell` script that is custom-made to set up `ta-lib` for `Python 3.11`. Whenever you are not sure whether a solution works and you
-have reasons to believe your attempt is error-prone, might have side-effects, or spoil the operating system, it is advisable 
+have reasons to believe your attempt is error-prone, might have side effects, or spoil the operating system, it is advisable 
 to work from within a virtual environment, for example using `Docker`, before employing a working solution on the user's machine. 
 Discussing `Docker` is beyond the scope of this documentation, however.
 
-The `shell script` can also be directly applied to work on MacOS as the latter uses the `Z shell` by default. 
+The `shell script` can also be directly applied to work on macOS as the latter uses the `Z shell` by default. 
 The `Z shell`, is also known as `zsh` and is a `Unix shell` that is built on top of `bash`. Hence, compatibility 
 is likely and the script should run without reservation. 
 For Windows users the `shell script` can also be modified to work on the `Windows shell` or `PowerShell`.
@@ -172,6 +172,27 @@ The former is well-tested, however the latter is more performant and has recentl
 
 ## Getting Started
 
+The following code was tested on `Ubuntu 22.04.4 LTS` using `Python 3.11`. For other Linux distributions you need to modify the commands 
+that install software on your system. For example, on `Fedora`, the default package manager is `dnf` rather than Ubuntu's `apt`. Also,
+you might modify `python3.11 -m venv MarketSignals` to whatever python version you have. Typically, one can also use the default system Python. The first 
+line in the below sequence then reads
+`python -m venv MarketSignals` rather than `python3.11 -m venv MarketSignals`. However, on my setup, I opted to install a more recent version of Python
+, here 3.11. I then have to explicitly call this version to create a virtual environment. Besides, I opted to leave Ubuntu's default system Python 
+alone. The reason is somewhat more intricate. In short, in contrast to Windows, Ubuntu's bootloader `grub` critically depends on this system
+Python. If, for any reason you spoil this system Python, you cannot just delete and re-install it. Should you try to do, your system will not 
+boot anymore. Hence, I leave the system Python untouched and instead opted for a separate Python version explicitly set for development work. 
+This `dev work Python`, I can modify, fine-tune, delete, and re-install without ever even touching the system Python, making it safer to experiment. 
+
+Execute the following sequences in your Linux terminal to set up your Python environment needed to run the `DecodingMarketSignals` repository.
+```
+python3.11 -m venv MarketSignals  # create a virtual environment
+source MarketSignals/bin/activate  # activate the virtual environment
+sudo apt-get install python3.11-dev  # installs the Python 3.11 development files on your Ubuntu or Debian-based Linux system.
+pip install -r requirements.txt  # install dependencies via pip 
+chmod +x install-talib.sh  # set execution rights for the shell script to install TA-lib from source
+./install-talib.sh  # run the script installing TA-lib  
+jupyter-notebook  # optional: launch an instance of Jupyter notebook and run the examples (assumes you downloaded the CRSP data already).
+```
 <!-- An overview of the files and folder in the exemplar.
 Not all files and directories need to be listed, just the important
 sections of your project, like the learning material, the code, the tests, etc.
