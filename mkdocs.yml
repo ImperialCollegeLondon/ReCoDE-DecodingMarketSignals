@@ -31,6 +31,7 @@ theme:
     - navigation.instant
     - navigation.top
     - toc.follow
+    - toc.integrate
     - content.code.annotate
 extra:
   homepage: https://imperialcollegelondon.github.io/ReCoDE-home/
@@ -40,9 +41,9 @@ extra:
 plugins:
   - tags
   - search
-  - include-markdown # https://github.com/mondeja/mkdocs-include-markdown-plugin
-  - mkdocs-jupyter
-
+  - include-markdown
+  - mkdocs-jupyter:
+      include_requirejs: true
 # Set settings for markdown extensions
 markdown_extensions:
   - meta

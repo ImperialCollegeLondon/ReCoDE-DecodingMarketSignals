@@ -14,8 +14,8 @@ pre-commit  # after install is complete, and you activated the respective Python
 
 
 # ReCoDE defaults
-mkdocs==1.5.3
+mkdocs
 mkdocs-include-markdown-plugin==3.7.1
-mkdocs-jupyter==0.24.5
-mkdocs-material==9.4.6
-python-markdown-math==0.8
+mkdocs-jupyter
+mkdocs-material
+python-markdown-math
