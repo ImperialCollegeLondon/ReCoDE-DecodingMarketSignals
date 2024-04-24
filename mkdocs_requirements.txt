@@ -1,0 +1,6 @@
+# ReCoDE defaults
+mkdocs
+mkdocs-include-markdown-plugin==3.7.1
+mkdocs-jupyter
+mkdocs-material
+python-markdown-math

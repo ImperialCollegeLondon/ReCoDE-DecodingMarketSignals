@@ -16,24 +16,9 @@ jobs:
 
       - name: Setup Python
         uses: actions/setup-python@v2
-        with:
-          python-version: 3.11
-
-      - name: Install system dependencies for TA-Lib
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y build-essential wget
-
-      - name: List files in the repository
-        run: ls -la
-
-      - name: Install TA-Lib binaries
-        run: |
-          chmod +x install-talib.sh
-          ./install-talib.sh
 
       - name: Install Python dependencies
-        run: pip install -r requirements.txt
+        run: pip install -r mkdocs_requirements.txt
 
       - name: Copy notebooks into docs
         run: cp -r notebooks/* docs/ | echo "No notebooks found"
