@@ -1,10 +1,12 @@
 <!-- Your Project title, make it sound catchy! -->
 
-# Decoding Market Signals: Leveraging candlestick patterns, machine learning and alpha signals for enhanced trading strategy analysis
+# Decoding Market Signals
+
+## Leveraging candlestick patterns, machine learning and alpha signals for enhanced trading strategy analysis
 
 <!-- Provide a short description to your project -->
 
-## Description
+### Description
 
 This project aims to rigorously back-test a trading strategy, focusing on evaluating the informational value of 
 candlestick patterns. Utilising `Python`, a pipeline of functions will systematically scan and evaluate 
@@ -27,7 +29,7 @@ showcasing the transformative potential of research computing and data science i
 
 <!-- What should the students going through your exemplar learn -->
 
-## Learning Outcomes
+### Learning Outcomes
 
 - Setting up a custom computational environment for financial data science.
 - Making a custom technical analysis library written in C++ work with recent Python. 
@@ -43,7 +45,7 @@ Provide your best estimate -->
 | Reading    | 4 hours |
 | Practising | 6 hours |
 
-## Requirements
+### Requirements
 
 <!--
 If your exemplar requires students to have a background knowledge of something
@@ -61,7 +63,7 @@ If there is an existing exemplar in the ReCoDE repositories link to that.
   - Particularly, we will make use of a library called `ta-lib` that contains a pattern-recognition library detecting candlestick patterns in Open-High-Low-Close `(OHCL)` data.
 - Familiarity with Jupyter notebooks, type annotations, and automation.
 
-### Academic
+#### Academic
 
 <!-- List the system requirements and how to obtain them, that can be as simple
 as adding a hyperlink to as detailed as writing step-by-step instructions.
@@ -86,7 +88,7 @@ code on all the data, you need a potent machine, or alternatively execute the co
 That does not hinder you from getting started, though.
 
 
-### System
+#### System
 
 <!-- Instructions on how the student should start going through the exemplar.
 
@@ -98,7 +100,7 @@ Start by watching the introduction video,
 then study Jupyter notebooks 1-3 in the `intro` folder
 and attempt to complete exercise 1a and 1b.
 
-Once done, start going through through the PDF in the `main` folder.
+Once done, start going through the PDF in the `main` folder.
 By the end of it you should be able to solve exercises 2 to 4.
 
 A final exercise can be found in the `final` folder.
@@ -126,18 +128,18 @@ If you want to make use of later versions of Python such as the environment this
 We now encountered two common problems, we frequently face as computer and data scientists:
 i) Making `legacy` code run on modern systems,
 ii) Facing multiple choices of which package manager to use.
-If you are just interested on getting started, use `Python 3.8` and skip the following section.
+**If you are just interested on getting started, use `Python 3.8` and skip the following section.**
 
 For the interested reader, is follows some background information on i) and ii).
 Issue i) is commonly encountered in practice, especially in larger corporations operating with custom software, whose author's stopped 
 maintaining their code. There is no silver bullet on working with legacy code and custom problems often need tailor-made solutions.
 For this project, the author wrote
 a `shell` script that is custom-made to set up `ta-lib` for `Python 3.11`. Whenever you are not sure whether a solution works and you
-have reasons to believe your attempt is error-prone, might have side-effects, or spoil the operating system, it is advisable 
+have reasons to believe your attempt is error-prone, might have side effects, or spoil the operating system, it is advisable 
 to work from within a virtual environment, for example using `Docker`, before employing a working solution on the user's machine. 
 Discussing `Docker` is beyond the scope of this documentation, however.
 
-The `shell script` can also be directly applied to work on MacOS as the latter uses the `Z shell` by default. 
+The `shell script` can also be directly applied to work on macOS as the latter uses the `Z shell` by default. 
 The `Z shell`, is also known as `zsh` and is a `Unix shell` that is built on top of `bash`. Hence, compatibility 
 is likely and the script should run without reservation. 
 For Windows users the `shell script` can also be modified to work on the `Windows shell` or `PowerShell`.
@@ -170,7 +172,39 @@ out there and arguably the most popular are `black`, see `https://github.com/psf
 The former is well-tested, however the latter is more performant and has recently gained increasing attention. Hence, we make use of Ruff.
 
 
-## Getting Started
+### Getting Started
+
+
+#### Windows/MacOS
+
+For Windows and MacOS based machines, you will have to install the `ta-lib` library separately. Instructions
+to do so can be [found here](https://github.com/ta-lib/ta-lib-python?tab=readme-ov-file#dependencies). Once installed, you can create a virtual environment as suggested below and use `pip install ta-lib` to install the required Python wrapper, and `pip install -r requirements.txt` to install the other dependencies. 
+
+#### Linux
+
+
+The following code was tested on `Ubuntu 22.04.4 LTS` using `Python 3.11`. For other Linux distributions you need to modify the commands 
+that install software on your system. For example, on `Fedora`, the default package manager is `dnf` rather than Ubuntu's `apt`. Also,
+you might modify `python3.11 -m venv MarketSignals` to whatever python version you have. Typically, one can also use the default system Python. The first 
+line in the below sequence then reads
+`python -m venv MarketSignals` rather than `python3.11 -m venv MarketSignals`. However, on my setup, I opted to install a more recent version of Python
+, here 3.11. I then have to explicitly call this version to create a virtual environment. Besides, I opted to leave Ubuntu's default system Python 
+alone. The reason is somewhat more intricate. In short, in contrast to Windows, Ubuntu's bootloader `grub` critically depends on this system
+Python. If, for any reason you spoil this system Python, you cannot just delete and re-install it. Should you try to do, your system will not 
+boot anymore. Hence, I leave the system Python untouched and instead opted for a separate Python version explicitly set for development work. 
+This `dev work Python`, I can modify, fine-tune, delete, and re-install without ever even touching the system Python, making it safer to experiment. 
+
+Execute the following sequences in your Linux terminal to set up your Python environment needed to run the `DecodingMarketSignals` repository.
+```
+python3.11 -m venv MarketSignals  # create a virtual environment
+source MarketSignals/bin/activate  # activate the virtual environment
+sudo apt-get install python3.11-dev  # installs the Python 3.11 development files on your Ubuntu or Debian-based Linux system.
+pip install -r requirements.txt  # install dependencies via pip 
+chmod +x install-talib.sh  # set execution rights for the shell script to install TA-lib from source
+./install-talib.sh  # run the script installing TA-lib  
+jupyter-notebook  # optional: launch an instance of Jupyter notebook and run the examples (assumes you downloaded the CRSP data already).
+```
+
 
 <!-- An overview of the files and folder in the exemplar.
 Not all files and directories need to be listed, just the important
@@ -192,7 +226,7 @@ on their own data from different markets, for instance, the futures and forex ma
 The below is a TODO
 -->
 
-## Project Structure
+### Project Structure
 
 
 ```log
@@ -241,6 +275,6 @@ The below is a TODO
 
 <!-- Change this to your License. Make sure you have added the file on GitHub -->
 
-## License
+### License
 
 This project is licensed under the [BSD-3-Clause license](LICENSE.md)
