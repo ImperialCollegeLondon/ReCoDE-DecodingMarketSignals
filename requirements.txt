@@ -11,7 +11,7 @@ ruff
 nbstripout # after pip installing in the respective virtual environment, invoke `nbstripout --install` in the terminal.
 nbconvert
 pre-commit  # after install is complete, and you activated the respective Python virtual environment, run `pre-commit install` in the terminal. Before each commit you then invoke `pre-commit run --all-files` in the terminal for the pre-commit scripts to run.
-
+wrds
 
 # ReCoDE defaults
 mkdocs==1.5.3
