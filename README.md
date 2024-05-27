@@ -1,10 +1,12 @@
 <!-- Your Project title, make it sound catchy! -->
 
-# Decoding Market Signals: Leveraging candlestick patterns, machine learning and alpha signals for enhanced trading strategy analysis
+# Decoding Market Signals
+
+## Leveraging candlestick patterns, machine learning and alpha signals for enhanced trading strategy analysis
 
 <!-- Provide a short description to your project -->
 
-## Description
+### Description
 
 This project aims to rigorously back-test a trading strategy, focusing on evaluating the informational value of 
 candlestick patterns. Utilising `Python`, a pipeline of functions will systematically scan and evaluate 
@@ -27,7 +29,7 @@ showcasing the transformative potential of research computing and data science i
 
 <!-- What should the students going through your exemplar learn -->
 
-## Learning Outcomes
+### Learning Outcomes
 
 - Setting up a custom computational environment for financial data science.
 - Making a custom technical analysis library written in C++ work with recent Python. 
@@ -43,7 +45,7 @@ Provide your best estimate -->
 | Reading    | 4 hours |
 | Practising | 6 hours |
 
-## Requirements
+### Requirements
 
 <!--
 If your exemplar requires students to have a background knowledge of something
@@ -61,7 +63,7 @@ If there is an existing exemplar in the ReCoDE repositories link to that.
   - Particularly, we will make use of a library called `ta-lib` that contains a pattern-recognition library detecting candlestick patterns in Open-High-Low-Close `(OHCL)` data.
 - Familiarity with Jupyter notebooks, type annotations, and automation.
 
-### Academic
+#### Academic
 
 <!-- List the system requirements and how to obtain them, that can be as simple
 as adding a hyperlink to as detailed as writing step-by-step instructions.
@@ -86,7 +88,7 @@ code on all the data, you need a potent machine, or alternatively execute the co
 That does not hinder you from getting started, though.
 
 
-### System
+#### System
 
 <!-- Instructions on how the student should start going through the exemplar.
 
@@ -126,7 +128,7 @@ If you want to make use of later versions of Python such as the environment this
 We now encountered two common problems, we frequently face as computer and data scientists:
 i) Making `legacy` code run on modern systems,
 ii) Facing multiple choices of which package manager to use.
-If you are just interested on getting started, use `Python 3.8` and skip the following section.
+**If you are just interested on getting started, use `Python 3.8` and skip the following section.**
 
 For the interested reader, is follows some background information on i) and ii).
 Issue i) is commonly encountered in practice, especially in larger corporations operating with custom software, whose author's stopped 
@@ -170,7 +172,16 @@ out there and arguably the most popular are `black`, see `https://github.com/psf
 The former is well-tested, however the latter is more performant and has recently gained increasing attention. Hence, we make use of Ruff.
 
 
-## Getting Started
+### Getting Started
+
+
+#### Windows/MacOS
+
+For Windows and MacOS based machines, you will have to install the `ta-lib` library separately. Instructions
+to do so can be [found here](https://github.com/ta-lib/ta-lib-python?tab=readme-ov-file#dependencies). Once installed, you can create a virtual environment as suggested below and use `pip install ta-lib` to install the required Python wrapper, and `pip install -r requirements.txt` to install the other dependencies. 
+
+#### Linux
+
 
 The following code was tested on `Ubuntu 22.04.4 LTS` using `Python 3.11`. For other Linux distributions you need to modify the commands 
 that install software on your system. For example, on `Fedora`, the default package manager is `dnf` rather than Ubuntu's `apt`. Also,
@@ -193,6 +204,8 @@ chmod +x install-talib.sh  # set execution rights for the shell script to instal
 ./install-talib.sh  # run the script installing TA-lib  
 jupyter-notebook  # optional: launch an instance of Jupyter notebook and run the examples (assumes you downloaded the CRSP data already).
 ```
+
+
 <!-- An overview of the files and folder in the exemplar.
 Not all files and directories need to be listed, just the important
 sections of your project, like the learning material, the code, the tests, etc.
@@ -213,7 +226,7 @@ on their own data from different markets, for instance, the futures and forex ma
 The below is a TODO
 -->
 
-## Project Structure
+### Project Structure
 
 
 ```log
@@ -262,6 +275,6 @@ The below is a TODO
 
 <!-- Change this to your License. Make sure you have added the file on GitHub -->
 
-## License
+### License
 
 This project is licensed under the [BSD-3-Clause license](LICENSE.md)
